@@ -76,7 +76,7 @@ function parseResponse (fetchRes, body) {
     throw rpcErrors.internal(body)
   }
   // check for rpc error
-  if (body.error) throw rpcErrors.internal(body.error)
+  if (body.error) throw rpcErrors.internal(body.error.message)
   // return successful result
   return body.result
 }
